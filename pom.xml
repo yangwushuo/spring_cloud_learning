@@ -11,6 +11,9 @@
     <modules>
         <module>spring_cloud_01_eureka_server</module>
         <module>spring_cloud_02_eureka_client</module>
+        <module>spring_cloud_03_consul_client</module>
+        <module>spring_cloud_04_users</module>
+        <module>spring_cloud_05_orders</module>
     </modules>
 
     <!--  继承spring boot的父项目  -->

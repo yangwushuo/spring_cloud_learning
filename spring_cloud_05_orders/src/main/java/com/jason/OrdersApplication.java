@@ -2,16 +2,16 @@ package com.jason;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
 /**
  * @author yangwushuo
- * @time 2022/10/9 19:41
+ * @time 2022/10/10 14:48
  */
-@EnableEurekaClient //开启eureka客户端
+@EnableDiscoveryClient
 @SpringBootApplication
-public class EurekaClientApplication {
+public class OrdersApplication {
     public static void main(String[] args) {
-        SpringApplication.run(EurekaClientApplication.class,args);
+        SpringApplication.run(OrdersApplication.class,args);
     }
 }

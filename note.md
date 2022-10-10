@@ -1,5 +1,34 @@
 spring-cloud与spring-boot版本对应(持续更新)
 
+|       SpringCloud版本       |                      	SpringBoot版本                      |
+|:-------------------------:|:-------------------------------------------------------:|
+|    2021.0.1-SNAPSHOT	     |       Spring Boot >=2.6.4-SNAPSHOT and <2.7.0-M1        |
+|         2021.0.0	         |         Spring Boot >=2.6.1 and <2.6.4-SNAPSHOT         |
+|       2021.0.0-RC1	       |           Spring Boot >=2.6.0-RC1 and <2.6.1            |
+|       2021.0.0-M3	        |          Spring Boot >=2.6.0-M3 and <2.6.0-RC1          |
+|       2021.0.0-M1	        |          Spring Boot >=2.6.0-M1 and <2.6.0-M3           |
+|         2020.0.5	         |          Spring Boot >=2.4.0.M1 and <2.6.0-M1           |
+|       Hoxton.SR12	        |        Spring Boot >=2.2.0.RELEASE and <2.4.0.M1        |
+|  Hoxton.BUILD-SNAPSHOT	   |           Spring Boot >=2.2.0.BUILD-SNAPSHOT            |
+|        Hoxton.M2	         |          Spring Boot >=2.2.0.M4 and <=2.2.0.M5          |
+| Greenwich.BUILD-SNAPSHO	  |    Spring Boot >=2.1.9.BUILD-SNAPSHOT and <2.2.0.M4     |
+|      Greenwich.SR2	       |  Spring Boot >=2.1.0.RELEASE and <2.1.9.BUILD-SNAPSHOT  |
+|       Greenwich.M1	       |        Spring Boot >=2.1.0.M3 and <2.1.0.RELEASE        |
+| Finchley.BUILD-SNAPSHOT	  |   Spring Boot >=2.0.999.BUILD-SNAPSHOT and <2.1.0.M3    |
+|       Finchley.SR4	       | Spring Boot >=2.0.3.RELEASE and <2.0.999.BUILD-SNAPSHOT |
+|       Finchley.RC2	       |     Spring Boot >=2.0.2.RELEASE and <2.0.3.RELEASE      |
+|       Finchley.RC1	       |     Spring Boot >=2.0.1.RELEASE and <2.0.2.RELEASE      |
+|       Finchley.M9	        |     Spring Boot >=2.0.0.RELEASE and <=2.0.0.RELEASE     | 
+|       Finchley.M7	        |         Spring Boot >=2.0.0.RC2 and <=2.0.0.RC2         |
+|       Finchley.M6	        |         Spring Boot >=2.0.0.RC1 and <=2.0.0.RC1         |
+|       Finchley.M5	        |          Spring Boot >=2.0.0.M7 and <=2.0.0.M7          |
+|       Finchley.M4	        |          Spring Boot >=2.0.0.M6 and <=2.0.0.M6          |
+|       Finchley.M3	        |          Spring Boot >=2.0.0.M5 and <=2.0.0.M5          |
+|       Finchley.M2	        |          Spring Boot >=2.0.0.M3 and <2.0.0.M5           |
+|       Edgware.SR5	        |                     1.5.20.RELEASE                      |
+|       Edgware.SR5	        |                     1.5.16.RELEASE                      |
+|      Edgware.RELEASE      |                     	1.5.9.RELEASE                      |
+|       Dalston.RC1	        |                      1.5.2.RELEASE                      |
 
 *Eureka心跳机制*:
 在应用启动后，节点们将会向Eureka Server发送心跳,默认周期为30秒，如果Eureka Server在多个心跳周期内没有接收到某个节点的心跳，Eureka Server将会从服务注册表中把这个服务节点移除(默认90秒)。
@@ -16,3 +45,6 @@ Eureka Server在运行期间会去统计心跳成功的比例在15分钟之内�
 一旦进入该模式，Eureka Server就会保护服务注册表中的信息，不再删除服务注册表中的数据（也就是不会注销任何微服务）。当网络故障恢复后，该Eureka Server节点会自动退出自我保护模式。综上，自我保护模式是一种应对网络异常的安全保护措施。它的架构哲学是宁可同时保留所有微服务（健康的微服务和不健康的微服务都会保留），也不盲目注销任何健康的微服务。使用自我保护模式，可以让Eureka集群更加的健壮、稳定。在Spring Cloud中，可以使用eureka.server.enable-self-preservation = false 禁用自我保护模式。
 
 开启自我保护机制：通过配置将判定时间改为10s，接着启动Eureka Server，等待10s之后，就会出现以上提示信息，表示自我保护被激活了。
+
+*直接启动consul client 出现问题*: 
+原因， consul server 检测所有客户端心跳，但是发送心跳时client必须给予响应才能该服务才能正常使用，在现有客户端中我们并没有引入健康检查依赖，所以导致健康检查始终不通过，导致服务不能使用

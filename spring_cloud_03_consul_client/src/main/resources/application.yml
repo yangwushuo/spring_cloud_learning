@@ -1,0 +1,14 @@
+server:
+  port: 9914
+
+spring:
+  application:
+    name: CONSUL-CLIENT #指定服务名称
+  cloud:
+    # 服务注册
+    consul:
+      host: localhost # consul主机地址
+      port: 8500 # consul端口号
+      discovery:
+        service-name: ${spring.application.name} # consul客户端注册名,会替换spring.application.name
+        register-health-check: true # 开启健康检查
