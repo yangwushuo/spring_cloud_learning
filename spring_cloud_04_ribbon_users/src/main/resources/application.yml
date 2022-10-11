@@ -12,3 +12,8 @@ spring:
       discovery:
         service-name: ${spring.application.name} # consul客户端注册名,会替换spring.application.name
         register-health-check: true # 开启健康检查
+
+# 修改用户服务调用订单服务默认负载均衡策略不再使用轮询 使用随机策略
+ORDERS:
+  ribbon:
+    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule
