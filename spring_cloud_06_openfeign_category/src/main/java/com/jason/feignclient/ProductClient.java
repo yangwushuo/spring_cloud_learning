@@ -12,7 +12,7 @@ import java.util.Map;
  * @author：yangwushuo
  * @time：2022/10/11 14:01
  */
-@FeignClient("PRODUCT")
+@FeignClient("PRODUCTS")
 public interface ProductClient {
 
     @GetMapping("/product")

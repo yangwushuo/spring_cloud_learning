@@ -16,6 +16,8 @@
         <module>spring_cloud_05_ribbon_orders</module>
         <module>spring_cloud_06_openfeign_category</module>
         <module>spring_cloud_07_openfeign_product</module>
+        <module>spring_cloud_08_hystrix_demo</module>
+        <module>spring_cloud_09_openfeign_hystrix</module>
     </modules>
 
     <!--  继承spring boot的父项目  -->
