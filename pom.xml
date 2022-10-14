@@ -18,6 +18,8 @@
         <module>spring_cloud_07_openfeign_product</module>
         <module>spring_cloud_08_hystrix_demo</module>
         <module>spring_cloud_09_openfeign_hystrix</module>
+        <module>spring_cloud_10_hystrix_dashboard</module>
+        <module>spring_cloud_11_gateway</module>
     </modules>
 
     <!--  继承spring boot的父项目  -->
