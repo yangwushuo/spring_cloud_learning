@@ -1,0 +1,22 @@
+server:
+  port: 9191
+spring:
+  application:
+    name: CONFIG-SERVER
+  cloud:
+    # 服务注册
+    consul:
+      host: localhost # consul主机地址
+
+      port: 8500 # consul端口号
+      discovery:
+        service-name: ${spring.application.name} # consul客户端注册名,会替换spring.application.name
+        register-health-check: true # 开启健康检查
+    config:
+      server:
+        git:
+          uri: https://github.com/yangwushuo/configs.git
+          default-label: main
+          username: 1197414647@qq.com
+          password: YANGwushuo1999
+          search-paths: configs

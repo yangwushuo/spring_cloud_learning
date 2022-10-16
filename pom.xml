@@ -20,6 +20,8 @@
         <module>spring_cloud_09_openfeign_hystrix</module>
         <module>spring_cloud_10_hystrix_dashboard</module>
         <module>spring_cloud_11_gateway</module>
+        <module>spring_cloud_12_configserver</module>
+        <module>spring_cloud_13_configclient</module>
     </modules>
 
     <!--  继承spring boot的父项目  -->

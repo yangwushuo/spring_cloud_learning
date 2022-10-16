@@ -1,0 +1,20 @@
+# 使用bootsrtap配置而非application配置
+# 原因:如果使用application配置系统启动会直接按照application中的配置进行启动
+#      使用bootstrap启动时系统会认为当前配置需要进行远程请求获取后再根据其中配置内容进行启动
+
+spring:
+  cloud:
+    # 流程: 远程配置 先去注册中心获取配置服务节点 再请求配置服务节点获取具体分支具体文件具体环境的配置
+    config:
+      discovery:
+        # 告诉当前config client 统一配置中心在注册中心中的id号
+        service-id: CONFIG-SERVER
+        # 开启当前config client 根据服务id去注册中心获取
+        enabled: true
+      label: main # 分支
+      name: demo # 文件名
+      profile: prod # 环境
+    # 注册中心配置
+    consul:
+      host: localhost
+      port: 8500
