@@ -1,0 +1,39 @@
+server:
+  port: 7979
+spring:
+  application:
+    name: GATEWAY
+  cloud:
+    # 服务注册
+    consul:
+      host: localhost # consul主机地址
+      port: 8500 # consul端口号
+      discovery:
+        service-name: ${spring.application.name} # consul客户端注册名,会替换spring.application.name
+#        register-health-check: true # 开启健康检查
+    gateway:
+      routes:
+        - id: category_router # 路由对象唯一标识
+          uri: lb://CATEGORYS # 两种写法: 1.真实服务地址 http://localhost:xxx/xxxx 2.gateway继承ribbon获取注册中心集群列表进行轮训派送请求 lb://集群id
+          predicates:
+            - Path=/category # 断言 配置路由规则 路径已/category进行转发
+#            - After= 区域时间 # 代表该路由规则必须在指定时间之后才能生效
+#            - Before= 区域时间 # 代表该路由规则必须在指定时间之前才能生效
+#            - Between 区域时间,区域时间 # 代表路由规则在某一个特定时间区域才能生效
+#            - Cookie= key,value # 必须含有指定cookie的key-value
+#            - Cookie= key,[A-Za-z0-9] #value使用正则表达式格式
+#            - Header= key,value # 必须含有指定头部
+#            - Method= GET,POST # 指定请求方式
+          filters:
+#            - AddRequestHeader=key, value # 给路由对象的所有转发请求加入指定请求头信息
+#            - AddRequestParameter=key, value # 给路由对象的所有转发请求加入指定参数
+#            - AddResponseHeader=key ,value # 给路由对象的所有请求的响应头部加入指定信息
+#            - PrefixPath=/xxxx # 给路由对象的所有转发请求的url加入指定前缀信息
+#              # 示例: 浏览器访问网关地址 /list 前缀路径/mypath 转发到后端服务地址为: uri+前缀路径+地址栏路径 ====> uri+/mypath/list
+#            - StripPrefix=x # 给路由对象的所有转发请求的url去掉指定x个前缀
+#              # 示例: 浏览器访问网关地址 /product/list StripPefix=1 ====> /list 后端接口: /list
+
+        - id: product_router # 路由对象唯一标识
+          uri: lb://PRODUCTS # 真实服务地址
+          predicates:
+            - Path=/product # 断言 配置路由规则 路径已/product进行转发 可以写多个以逗号隔开，可以写通配符/**/**

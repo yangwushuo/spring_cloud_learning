@@ -1,0 +1,38 @@
+server:
+  port: 9920
+spring:
+  application:
+    name: CATEGORYS
+  cloud:
+    # 服务注册
+    consul:
+      host: localhost # consul主机地址
+      port: 8500 # consul端口号
+      discovery:
+        service-name: ${spring.application.name} # consul客户端注册名,会替换spring.application.name
+        register-health-check: true # 开启健康检查
+feign:
+  client:
+    config:
+      # 指定服务修改某个服务调用超时时间
+      # feign日志打印只会对debug级别做出响应
+      # `NONE`(不记录任何日志)
+      # `BASIC`(仅仅记录请求方法,url,响应状态码及执行时间)
+      # `HEADERS`(在BASIC级别基础之上,记录请求和响应的header)
+      # `FULL`(记录请求和响应的header,body和元数据)
+#      PRODUCTS:
+#        connectTimeout: 5000 # 配置指定服务连接超时
+#        readTimeout: 5000 # 配置指定服务等待超时
+#        loggerLevel: full
+      default:
+        connectTimeout: 5000 # 配置所有服务连接超时
+        readTimeout: 5000 # 配置所有服务等待超时
+        loggerLevel: full # 全局开启服务日志展示
+
+
+logging:
+  level:
+    # 展示openfeign日志
+    com.jason.feignclient: debug
+
+
