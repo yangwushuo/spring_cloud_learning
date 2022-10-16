@@ -15,8 +15,10 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/yangwushuo/configs.git
-          default-label: main
-          username: 1197414647@qq.com
+          uri: https://gitee.com/yangwushuo/configs.git
+          default-label: master
+          username: yangwushuo
           password: YANGwushuo1999
-          search-paths: configs
+          search-paths:
+            - configs
+      label: master

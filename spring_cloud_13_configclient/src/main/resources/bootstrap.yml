@@ -11,9 +11,9 @@ spring:
         service-id: CONFIG-SERVER
         # 开启当前config client 根据服务id去注册中心获取
         enabled: true
-      label: main # 分支
+      label: master # 分支
       name: demo # 文件名
-      profile: prod # 环境
+      profile: dev # 环境
     # 注册中心配置
     consul:
       host: localhost
