@@ -1,0 +1,9 @@
+server:
+  port: 9955
+spring:
+  application:
+    name: USER
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 43.142.130.227:8848

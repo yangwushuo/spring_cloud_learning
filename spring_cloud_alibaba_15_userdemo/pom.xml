@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>spring_cloud_12_configserver</artifactId>
+    <artifactId>spring_cloud_alibaba_15_userdemo</artifactId>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
@@ -17,30 +17,20 @@
     </properties>
 
     <dependencies>
-        <!--  引入springbootweb  使用spring mvc会与gateway产生冲突-->
+        <!--  引入springbootweb -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
-        <!--   引入consul依赖    -->
+        <!--   引入nacos组件     -->
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
+        </dependency>
+        <!--   引入openfeign组件    -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-consul-discovery</artifactId>
-        </dependency>
-        <!--    健康检查的依赖 必须引入,如不引入则健康检查不会生效    -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-actuator</artifactId>
-        </dependency>
-        <!--   引入config server   -->
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-config-server</artifactId>
-        </dependency>
-        <!--    引入bus组件    -->
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-bus-amqp</artifactId>
+            <artifactId>spring-cloud-starter-openfeign</artifactId>
         </dependency>
     </dependencies>
 

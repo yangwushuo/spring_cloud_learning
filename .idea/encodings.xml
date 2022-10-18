@@ -14,7 +14,12 @@
     <file url="file://$PROJECT_DIR$/spring_cloud_11_gateway/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/spring_cloud_12_configserver/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/spring_cloud_13_configclient/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring_cloud_alibaba_14_nacos_client/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring_cloud_alibaba_15_userdemo/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring_cloud_alibaba_16_productdemo/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring_cloud_alibaba_17_nacosconfig/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />
+    <file url="file://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-starter-parent/2.3.12.RELEASE/src/main/resources" charset="UTF-8" />
   </component>
 </project>

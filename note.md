@@ -1,4 +1,4 @@
-spring-cloud与spring-boot版本对应(持续更新)
+### spring-cloud与spring-boot版本对应(持续更新)
 
 |       SpringCloud版本       |                      	SpringBoot版本                      |
 |:-------------------------:|:-------------------------------------------------------:|
@@ -30,6 +30,7 @@ spring-cloud与spring-boot版本对应(持续更新)
 |      Edgware.RELEASE      |                     	1.5.9.RELEASE                      |
 |       Dalston.RC1	        |                      1.5.2.RELEASE                      |
 
+### Eureka
 *Eureka心跳机制*:
 在应用启动后，节点们将会向Eureka Server发送心跳,默认周期为30秒，如果Eureka Server在多个心跳周期内没有接收到某个节点的心跳，Eureka Server将会从服务注册表中把这个服务节点移除(默认90秒)。
 
@@ -46,5 +47,35 @@ Eureka Server在运行期间会去统计心跳成功的比例在15分钟之内�
 
 开启自我保护机制：通过配置将判定时间改为10s，接着启动Eureka Server，等待10s之后，就会出现以上提示信息，表示自我保护被激活了。
 
+### Consul
 *直接启动consul client 出现问题*: 
 原因， consul server 检测所有客户端心跳，但是发送心跳时client必须给予响应才能该服务才能正常使用，在现有客户端中我们并没有引入健康检查依赖，所以导致健康检查始终不通过，导致服务不能使用
+
+### Nacos   
+官网:  https://nacos.io/zh-cn/index.html
+### Ribbon
+### OpenFeign
+### Hystrix
+### Gateway
+### Config
+### Others
+
+docker 使用 nacos 2.1.0-BETA 通过http://host:port/nacos 访问界面化管理
+```docker
+1.拉取镜像
+docker pull nacos/nacos-server:v2.1.0-BETA
+2.运行容器
+docker run -d \
+-e MODE=standalone \
+-e PREFER_HOST_MODE=hostname \
+-e SPRING_DATASOURCE_PLATFORM=mysql \
+-e MYSQL_SERVICE_HOST= ... \
+-e MYSQL_SERVICE_PORT= ...  \
+-e MYSQL_SERVICE_USER= ...  \
+-e MYSQL_SERVICE_PASSWORD= ...  \
+-e MYSQL_SERVICE_DB_NAME= ...  \
+-p 8848:8848 \ 
+--name nacos \
+--restart=always \
+nacos/nacos-server:v2.1.0-BETA 
+```

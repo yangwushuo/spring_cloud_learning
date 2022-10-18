@@ -14,7 +14,13 @@ spring:
       label: master # 分支
       name: demo # 文件名
       profile: dev # 环境
+      fail-fast: true # 启动时当远端配置还没有拉取完整时，项目启动过程中所有失败都是允许的
     # 注册中心配置
     consul:
       host: localhost
       port: 8500
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*" # 开启所有web 端点暴露

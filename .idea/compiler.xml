@@ -11,13 +11,17 @@
         <module name="spring_cloud_03_consul_client" />
         <module name="spring_cloud_07_openfeign_product" />
         <module name="spring_cloud_05_ribbon_orders" />
+        <module name="spring_cloud_alibaba_17_nacosconfig" />
         <module name="spring_cloud_12_configserver" />
         <module name="spring_cloud_09_openfeign_hystrix" />
+        <module name="spring_cloud_alibaba_15_userdemo" />
         <module name="spring_cloud_10_hystrix_dashboard" />
         <module name="spring_cloud_11_gateway" />
         <module name="spring_cloud_13_configclient" />
+        <module name="spring_cloud_alibaba_14_nacos_client" />
         <module name="spring_cloud_08_hystrix_demo" />
         <module name="spring_cloud_04_ribbon_users" />
+        <module name="spring_cloud_alibaba_16_productdemo" />
         <module name="spring_cloud_06_openfeign_category" />
       </profile>
     </annotationProcessing>
@@ -37,6 +41,10 @@
       <module name="spring_cloud_11_gateway" options="-parameters" />
       <module name="spring_cloud_12_configserver" options="-parameters" />
       <module name="spring_cloud_13_configclient" options="-parameters" />
+      <module name="spring_cloud_alibaba_14_nacos_client" options="-parameters" />
+      <module name="spring_cloud_alibaba_15_userdemo" options="-parameters" />
+      <module name="spring_cloud_alibaba_16_productdemo" options="-parameters" />
+      <module name="spring_cloud_alibaba_17_nacosconfig" options="-parameters" />
     </option>
   </component>
 </project>
