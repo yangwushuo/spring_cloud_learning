@@ -26,6 +26,7 @@
         <module>spring_cloud_alibaba_15_userdemo</module>
         <module>spring_cloud_alibaba_16_productdemo</module>
         <module>spring_cloud_alibaba_17_nacosconfig</module>
+        <module>spring_cloud_alibaba_18_sentinel</module>
     </modules>
 
     <!--  继承spring boot的父项目  -->

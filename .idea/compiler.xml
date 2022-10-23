@@ -23,6 +23,7 @@
         <module name="spring_cloud_04_ribbon_users" />
         <module name="spring_cloud_alibaba_16_productdemo" />
         <module name="spring_cloud_06_openfeign_category" />
+        <module name="spring_cloud_alibaba_18_sentinel" />
       </profile>
     </annotationProcessing>
   </component>
@@ -45,6 +46,7 @@
       <module name="spring_cloud_alibaba_15_userdemo" options="-parameters" />
       <module name="spring_cloud_alibaba_16_productdemo" options="-parameters" />
       <module name="spring_cloud_alibaba_17_nacosconfig" options="-parameters" />
+      <module name="spring_cloud_alibaba_18_sentinel" options="-parameters" />
     </option>
   </component>
 </project>
