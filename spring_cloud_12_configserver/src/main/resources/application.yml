@@ -17,17 +17,17 @@ spring:
         git:
           uri: https://gitee.com/yangwushuo/configs.git
           default-label: master
-          username: yangwushuo
-          password: YANGwushuo1999
+          username: xx
+          password: xx
           search-paths:
             - configs
       label: master
   rabbitmq:
-    host: 43.142.130.227
+    host: xx
     port: 5672
     virtual-host: /config-center
-    username: jason
-    password: YANGwushuo1999
+    username: xx
+    password: xx
 management:
   endpoints:
     web:

@@ -3,7 +3,7 @@ spring:
   cloud:
     nacos:
       config:
-        server-addr: 43.142.130.227:8848 # 远程 config server 地址
+        server-addr: xx:8848 # 远程 config server 地址
         group: DEFAULT_GROUP # 配置文件分组
         name: configdemo-dev # 配置文件名 注意: nacos配置中心不使用总配置文件 只允许指定文件名字 dev/prod
         file-extension: yml # 配置文件后缀名
